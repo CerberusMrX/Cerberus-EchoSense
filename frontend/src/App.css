@@ -1,0 +1,377 @@
+/* App.css - Main Styles for Cerberus EchoSense Dashboard */
+
+.dashboard-root {
+    width: 100vw;
+    height: 100vh;
+    background: #050510;
+    color: #00ff41;
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+    background: rgba(5, 5, 16, 0.9);
+    z-index: 10;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-icon {
+    color: #00ff41;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 65, 0.5));
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+h1 span {
+    font-size: 0.8rem;
+    background: #00ff41;
+    color: #050510;
+    padding: 2px 6px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.system-status {
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+    color: rgba(0, 255, 65, 0.7);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-online {
+    background: #00ff41;
+    box-shadow: 0 0 8px #00ff41;
+}
+
+.status-offline {
+    background: #ff5050;
+    box-shadow: 0 0 8px #ff5050;
+}
+
+.mode-tag {
+    color: #ffeb3b;
+    border-left: 1px solid rgba(0, 255, 65, 0.3);
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+.hardware-indicators {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.hw-pill {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    color: rgba(0, 255, 65, 0.4);
+    border-radius: 10px;
+}
+
+.hw-pill.active {
+    color: #00ff41;
+    border-color: #00ff41;
+    background: rgba(0, 255, 65, 0.1);
+}
+
+.dashboard-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.module-container {
+    background: rgba(10, 10, 30, 0.6);
+    border: 1px solid rgba(0, 255, 65, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.radar-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00d4ff;
+    letter-spacing: 1px;
+}
+
+.data-module {
+    background: rgba(10, 10, 30, 0.8);
+    border: 1px solid rgba(0, 255, 65, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    color: rgba(0, 255, 65, 0.6);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.stat-value span {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.activity-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.event-item {
+    padding: 10px;
+    border-left: 3px solid #00ff41;
+    background: rgba(0, 255, 65, 0.05);
+    margin-bottom: 10px;
+}
+
+.event-source {
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    color: #ffeb3b;
+}
+
+.event-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.timestamp {
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.handoff-tag {
+    font-size: 0.6rem;
+    background: #ff9800;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-top: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.entity-card {
+    padding: 10px;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.entity-id {
+    font-size: 0.7rem;
+    color: #00d4ff;
+}
+
+.entity-type {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.out-of-frame-notice {
+    font-size: 0.6rem;
+    color: #ff5050;
+    margin-top: 2px;
+}
+
+.pulse {
+    animation: pulse-bg 2s infinite;
+}
+
+@keyframes pulse-bg {
+    0% {
+        background: rgba(0, 255, 65, 0.05);
+    }
+
+    50% {
+        background: rgba(0, 255, 65, 0.15);
+    }
+
+    100% {
+        background: rgba(0, 255, 65, 0.05);
+    }
+}
+
+.empty-state {
+    font-size: 0.8rem;
+    opacity: 0.4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* UI Scoped Styles */
+.camera-view {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.camera-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.camera-header h3 {
+    margin: 0;
+    color: #00d4ff;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.camera-status {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.status-indicator {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.status-indicator.connected {
+    background: rgba(0, 255, 100, 0.1);
+    color: #00ff64;
+    border: 1px solid rgba(0, 255, 100, 0.2);
+}
+
+.status-indicator.disconnected {
+    background: rgba(255, 50, 50, 0.1);
+    color: #ff5050;
+    border: 1px solid rgba(255, 50, 50, 0.2);
+}
+
+.fps-counter {
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    font-weight: 500;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.camera-container {
+    position: relative;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera-canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.camera-placeholder {
+    position: absolute;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Global Overlay CRT Effects */
+.crt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 100;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+.vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 101;
+    pointer-events: none;
+}

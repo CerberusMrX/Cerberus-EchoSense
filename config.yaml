@@ -1,0 +1,76 @@
+hardware:
+  mode: hybrid
+  camera:
+    enabled: true
+    device: 0
+    resolution:
+    - 640
+    - 480
+    fps: 30
+    backend: opencv
+  esp8266:
+    enabled: false
+    udp_port: 8888
+    tx_mac: AA:BB:CC:DD:EE:FF
+  esp32:
+    enabled: true
+    udp_port: 8889
+    csi_format: csv
+    tx_mac: AA:BB:CC:DD:EE:FF
+  wifi_adapter:
+    enabled: false
+    interface: wlan0
+    monitor_mode: true
+    channel: 6
+detection:
+  yolo:
+    model: yolov8n.pt
+    confidence: 0.5
+    iou_threshold: 0.4
+    classes:
+    - 0  # person
+    - 14 # bird
+    - 15 # cat
+    - 16 # dog
+    device: cpu
+  pose:
+    enabled: true
+    model: mediapipe
+    min_confidence: 0.5
+  rssi:
+    window_size: 50
+    variance_threshold: 5.0
+    calibration_duration: 10
+  csi:
+    window_size: 100
+    motion_threshold: 0.3
+    use_ml_classifier: true
+    model_path: models/csi_lstm.h5
+  wifi_monitor:
+    packet_window: 200
+    rssi_threshold: -70
+    motion_algorithm: variance
+  activity:
+    enabled: true
+    classes:
+    - WALKING
+    - STANDING
+    - SITTING
+    - RUNNING
+    - LYING
+    model_path: models/activity_rf.pkl
+fusion:
+  camera_priority: true
+  handoff_delay_ms: 500
+  tracking_timeout_s: 5
+  confidence_threshold: 0.4
+server:
+  host: 0.0.0.0
+  port: 8000
+  cors_origins:
+  - '*'
+  websocket_ping_interval: 30
+logging:
+  level: INFO
+  file: cerberus.log
+  console: true

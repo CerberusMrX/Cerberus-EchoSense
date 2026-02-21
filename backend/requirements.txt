@@ -1,0 +1,29 @@
+# Base dependencies (all modes)
+fastapi
+uvicorn[standard]
+websockets
+numpy
+pyyaml
+python-multipart
+
+# Camera mode dependencies
+opencv-python
+ultralytics
+mediapipe
+pillow
+
+# ESP32 CSI / ML dependencies
+tensorflow
+scikit-learn
+pandas
+
+# WiFi monitor mode
+scapy
+
+# Optional: PyTorch (alternative to TensorFlow)
+# torch
+# torchvision
+
+# Development dependencies
+pytest
+black
