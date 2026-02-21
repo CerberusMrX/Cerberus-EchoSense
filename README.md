@@ -47,8 +47,8 @@ Cerberus EchoSense is a **modular detection platform** that adapts to whatever h
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/cerberus-echosense
-cd cerberus-echosense
+git clone https://github.com/CerberusMrX/Cerberus-EchoSense
+cd Cerberus-EchoSense
 
 # Run setup wizard (interactive)
 python setup_wizard.py
