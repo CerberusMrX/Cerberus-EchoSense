@@ -396,7 +396,7 @@ MIT License - see LICENSE file
 
 - **Issues**: Open an issue on GitHub
 - **Discussions**: Start a discussion for questions
-- **Email**: sudeepa@example.com
+- **Email**: sudeepawanigarathne09@gmail.com
 
 ---
 
